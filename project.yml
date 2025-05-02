@@ -58,14 +58,13 @@ targets:
           - MapboxMaps
           - Turf
     configFiles:
-      Debug: [config/app.xcconfig, config/keys.xcconfig]
-      Release: [config/app.xcconfig, config/keys.xcconfig]
+      Debug: config/app.xcconfig
+      Release: config/app.xcconfig
     preBuildScripts:
       - script: '"$SRCROOT/scripts/lint_source.sh"'
         name: Lint Source
         basedOnDependencyAnalysis: false
         showEnvVars: false
-    
   VTAccessTests:
     type: bundle.unit-test
     platform: iOS

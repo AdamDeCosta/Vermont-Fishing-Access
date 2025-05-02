@@ -1,13 +1,13 @@
 //
-//  SampleboxUITestsLaunchTests.swift
-//  SampleboxUITests
+//  VTAccessUITestsLaunchTests.swift
+//  VTAccessUITests
 //
 //  Created by Adam DeCosta on 4/23/25.
 //
 
 import XCTest
 
-final class SampleboxUITestsLaunchTests: XCTestCase {
+final class VTAccessUITestsLaunchTests: XCTestCase {
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

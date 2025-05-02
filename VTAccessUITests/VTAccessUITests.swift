@@ -1,13 +1,13 @@
 //
-//  SampleboxUITests.swift
-//  SampleboxUITests
+//  VTAccessUITests.swift
+//  VTAccessUITests
 //
 //  Created by Adam DeCosta on 4/23/25.
 //
 
 import XCTest
 
-final class \: XCTestCase {
+final class VTAccessUITests: XCTestCase {
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 

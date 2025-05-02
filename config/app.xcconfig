@@ -1,3 +1,5 @@
+#include "keys.xcconfig"
+
 MARKETING_VERSION = 0.10.0
 
 DEVELOPMENT_TEAM = P8LFM3W4S8
@@ -12,7 +14,7 @@ INFOPLIST_KEY_LSApplicationCategoryType = public.app-category.lifestyle
 
 INFOPLIST_KEY_CFBundleDisplayName = VT Access
 
-INFOPLIST_KEY_NSLocationUsageDescription = For displaying your location on the map
+INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = For displaying your location on the map
 
 INFOPLIST_KEY_UILaunchStoryboardName = Launch Screen
 
@@ -22,4 +24,6 @@ PRODUCT_BUNDLE_IDENTIFIER = io.decosta.vtfishing
 
 GENERATE_INFOPLIST_FILE = YES
 
-INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait
+INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait\
+
+CODE_SIGN_ENTITLEMENTS = Sources/App/Resources/VTAccess.entitlements
