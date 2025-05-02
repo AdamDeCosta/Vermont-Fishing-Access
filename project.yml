@@ -1,0 +1,78 @@
+name: VTAccess
+configs:
+  Debug: debug
+  Release: release
+configFiles:
+  Debug: [config/app.xcconfig, config/keys.xcconfig]
+  Release: [config/app.xcconfig, config/keys.xcconfig]
+settings:
+  SWIFT_VERSION: 6.0
+  ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS: YES
+  ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: YES
+
+options:
+  bundleIdPrefix: io.decosta
+  groupOrdering:
+    - order: [config, Sources, VTAccessTests, VTAccessUITests]
+
+schemes:
+  Release:
+    build:
+      targets:
+        VTAccess: all
+      config: Release
+    run:
+      config: Release
+    archive:
+      config: Release
+  
+  Debug:
+    build:
+      targets:
+        VTAccess: all
+      config: Debug
+    run:
+      config: Debug
+    archive:
+      config: Debug
+
+packages:
+  Mapbox:
+    url: https://github.com/mapbox/mapbox-maps-ios.git
+    from: 11.0.0
+targets:
+  VTAccess:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources: 
+      - path: Sources
+      - path: config
+      - path: config/keys.xcconfig
+        optional: true
+    dependencies:
+      - package: Mapbox
+        products: 
+          - MapboxCommon
+          - MapboxCoreMaps
+          - MapboxMaps
+          - Turf
+    configFiles:
+      Debug: [config/app.xcconfig, config/keys.xcconfig]
+      Release: [config/app.xcconfig, config/keys.xcconfig]
+    preBuildScripts:
+      - script: '"$SRCROOT/scripts/lint_source.sh"'
+        name: Lint Source
+        basedOnDependencyAnalysis: false
+        showEnvVars: false
+    
+  VTAccessTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources: VTAccessTests
+  VTAccessUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources: VTAccessUITests
