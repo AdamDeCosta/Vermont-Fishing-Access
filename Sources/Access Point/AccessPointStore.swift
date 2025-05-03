@@ -51,7 +51,7 @@ class AccessPointStore {
             return nil
         }
 
-        return String(featureId)
+        return String(Int(featureId))
     }
 
     func getAccessPoints(byFish fish: Set<Fish>) -> [FishingAccessPoint] {

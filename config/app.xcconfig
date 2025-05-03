@@ -16,7 +16,7 @@ INFOPLIST_KEY_CFBundleDisplayName = VT Access
 
 INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = For displaying your location on the map
 
-INFOPLIST_KEY_UILaunchStoryboardName = Launch Screen
+INFOPLIST_KEY_UILaunchStoryboardName = Launch Screen.storyboard
 
 TARGETED_DEVICE_FAMILY = 1 // iPhone
 
@@ -24,6 +24,8 @@ PRODUCT_BUNDLE_IDENTIFIER = io.decosta.vtfishing
 
 GENERATE_INFOPLIST_FILE = YES
 
-INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait\
+INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait
 
 CODE_SIGN_ENTITLEMENTS = Sources/App/Resources/VTAccess.entitlements
+
+INFOPLIST_FILE = Sources/App/Resources/Info.plist

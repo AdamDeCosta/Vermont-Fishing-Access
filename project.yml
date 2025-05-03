@@ -35,6 +35,10 @@ schemes:
       config: Debug
     archive:
       config: Debug
+    test:
+      targets:
+        - VTAccessTests
+        - VTAccessUITests
 
 packages:
   Mapbox:
@@ -69,9 +73,21 @@ targets:
     type: bundle.unit-test
     platform: iOS
     deploymentTarget: "18.0"
-    sources: VTAccessTests
+    sources:
+      - path: VTAccessTests
+    configFiles:
+      Debug: config/app.xcconfig
+      Release: config/app.xcconfig
+    dependencies:
+      - target: VTAccess
   VTAccessUITests:
     type: bundle.ui-testing
     platform: iOS
     deploymentTarget: "18.0"
-    sources: VTAccessUITests
+    sources: 
+      - path: VTAccessUITests
+    configFiles:
+      Debug: config/app.xcconfig
+      Release: config/app.xcconfig
+    dependencies:
+      - target: VTAccess
