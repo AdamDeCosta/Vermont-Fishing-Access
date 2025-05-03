@@ -29,3 +29,5 @@ INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait
 CODE_SIGN_ENTITLEMENTS = Sources/App/Resources/VTAccess.entitlements
 
 INFOPLIST_FILE = Sources/App/Resources/Info.plist
+
+ENABLE_USER_SCRIPT_SANDBOXING = YES

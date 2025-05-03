@@ -69,6 +69,8 @@ targets:
         name: Lint Source
         basedOnDependencyAnalysis: false
         showEnvVars: false
+        inputFiles:
+          - $(SRCROOT)/scripts/lint_source.sh
   VTAccessTests:
     type: bundle.unit-test
     platform: iOS

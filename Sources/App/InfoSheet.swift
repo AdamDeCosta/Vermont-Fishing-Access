@@ -43,8 +43,12 @@ struct InfoSheet<Content: View>: View {
                     DirectionsButton(location: location, destinationName: infoType.title)
                 }
             }
-
-            content()
+            
+            ScrollView {
+                content()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            
             Spacer()
         }
         .padding()

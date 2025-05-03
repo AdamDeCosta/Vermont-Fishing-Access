@@ -19,7 +19,7 @@ struct AccessPointStoreTests {
                 "AccessName": "Test Access Point",
                 "id": 123,
                 "BrownTrout": "Yes",
-                "SmallmouthBass": "No",
+                "SmallmouthBass": "No"
             ])
 
         let feature = FeaturesetFeature(
