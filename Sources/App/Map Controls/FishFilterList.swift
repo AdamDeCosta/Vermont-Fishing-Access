@@ -10,10 +10,23 @@ struct FishFilterList: View {
     @Environment(\.dismiss) var dismiss
 
     @State var selectedFish: [String: Fish] = [:]
+    @State var searchText: String = ""
 
     let onSubmit: ([Fish]) -> Void
 
     let allFish = Fish.allCases.sorted(using: KeyPathComparator(\.name))
+    
+    var fishToShow: [Fish] {
+        if searchText.isEmpty {
+            return allFish
+        }
+        
+        return Fish.allCases.filter { fish in
+            fish.name.localizedLowercase.replacing(.whitespace, with: "")
+                .contains(searchText.localizedLowercase.replacing(.whitespace, with: ""))
+        }
+    }
+        
 
     init(selectedFish: [Fish] = [], onSubmit: @escaping ([Fish]) -> Void) {
         self.onSubmit = onSubmit
@@ -27,7 +40,7 @@ struct FishFilterList: View {
 
     var body: some View {
         List {
-            ForEach(allFish, id: \.rawValue) { fish in
+            ForEach(fishToShow, id: \.rawValue) { fish in
                 Button {
                     if selectedFish[fish.rawValue] != nil {
                         selectedFish[fish.rawValue] = nil
@@ -61,5 +74,6 @@ struct FishFilterList: View {
             }
         }
         .navigationTitle("Select Species")
+        .searchable(text: $searchText, prompt: "Search")
     }
 }
